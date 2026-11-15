@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Corner Cup Coffee Sample Site</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* Layout idea: poster-style single page. Navy ground, one kalamansi-yellow accent, big type, menu as a price list with dotted leaders. */
+:root{
+  --ink:#14213d; --ink-2:#1d2f55; --paper:#fbf8ee; --kalamansi:#f4c430; --chili:#d9412f; --muted:#aab4cc;
+  --display:'Bricolage Grotesque','Arial Black',system-ui,sans-serif; --body:'DM Sans',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{color-scheme:dark}
+body{background:var(--ink);color:var(--paper);font-family:var(--body);font-size:17px;line-height:1.6}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+.sample{background:var(--kalamansi);color:var(--ink);font-size:13px;font-weight:700;text-align:center;padding:6px 12px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0;gap:16px;flex-wrap:wrap}
+.logo{font-family:var(--display);font-weight:800;font-size:22px;letter-spacing:.02em}
+.logo b{color:var(--kalamansi)}
+nav ul{display:flex;gap:22px;list-style:none;padding:0;font-weight:500;font-size:15px}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover,nav a:focus-visible{color:var(--kalamansi);outline:none;text-decoration:underline}
+.hero{padding:40px 0 56px;display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:end}
+.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(44px,9vw,104px);line-height:.92;letter-spacing:-.03em;text-wrap:balance}
+.hero h1 em{font-style:normal;color:var(--kalamansi)}
+.hero p{color:var(--muted);max-width:34ch}
+.btn{display:inline-block;margin-top:20px;background:var(--kalamansi);color:var(--ink);font-weight:700;padding:12px 22px;border-radius:999px;text-decoration:none}
+.btn:focus-visible{outline:3px solid var(--paper);outline-offset:3px}
+.strip{background:var(--kalamansi);color:var(--ink);font-family:var(--display);font-weight:800;font-size:clamp(18px,3vw,28px);padding:14px 0;overflow:hidden;white-space:nowrap}
+.strip span{display:inline-block;padding:0 22px}
+section{padding:64px 0}
+h2{font-family:var(--display);font-weight:800;font-size:clamp(32px,5vw,52px);letter-spacing:-.02em;line-height:1;margin-bottom:28px}
+.menu{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:36px 56px}
+.menu h3{font-family:var(--display);font-size:18px;color:var(--kalamansi);margin-bottom:10px;letter-spacing:.04em;text-transform:uppercase}
+.item{display:flex;align-items:baseline;gap:8px;padding:6px 0}
+.item .dots{flex:1;border-bottom:2px dotted #3b4d77;transform:translateY(-4px)}
+.item .price{font-variant-numeric:tabular-nums;font-weight:700}
+.item small{display:block;color:var(--muted);font-size:14px;font-weight:400}
+.visit{background:var(--ink-2)}
+.visit .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:36px}
+.visit h3{font-family:var(--display);font-size:18px;margin-bottom:8px;color:var(--kalamansi)}
+.hours{width:100%;border-collapse:collapse}
+.hours td{padding:6px 0;border-bottom:1px solid #2f4272}
+.hours td:last-child{text-align:right;font-variant-numeric:tabular-nums}
+footer{padding:28px 0 40px;color:var(--muted);font-size:14px}
+@media (max-width:760px){.hero{grid-template-columns:1fr}nav ul{gap:16px}}
+@media (prefers-reduced-motion:no-preference){.hero h1{animation:rise .7s ease-out both}@keyframes rise{from{transform:translateY(14px);opacity:.01}to{transform:none;opacity:1}}}
+</style>
+</head>
+<body>
+<div class="sample">SAMPLE WEBSITE for a fictional shop. Made as a portfolio example.</div>
+<div class="wrap">
+  <nav>
+    <div class="logo">CORNER<b>CUP</b></div>
+    <ul><li><a href="#menu">Menu</a></li><li><a href="#visit">Visit</a></li><li><a href="#contact">Contact</a></li></ul>
+  </nav>
+  <header class="hero">
+    <h1>Coffee on the <em>corner</em>. Brewed properly.</h1>
+    <div>
+      <p>A neighborhood coffee shop in Portland, Oregon. Small-batch beans, fresh pastries from the bakery next door, and a seat by the window from $3.</p>
+      <a class="btn" href="#menu">See the menu</a>
+    </div>
+  </header>
+</div>
+<div class="strip" aria-hidden="true"><span>SMALL-BATCH BEANS</span><span>FRESH PASTRIES</span><span>MAPLE COLD BREW</span><span>OAT MILK LATTE</span><span>OPEN 6 AM</span></div>
+
+<section id="menu"><div class="wrap">
+  <h2>Menu</h2>
+  <div class="menu">
+    <div>
+      <h3>Hot coffee</h3>
+      <div class="item"><span>Drip Coffee<small>Medium roast, free refills</small></span><span class="dots"></span><span class="price">$3</span></div>
+      <div class="item"><span>Café Latte</span><span class="dots"></span><span class="price">$4.50</span></div>
+      <div class="item"><span>Vanilla Latte</span><span class="dots"></span><span class="price">$5</span></div>
+    </div>
+    <div>
+      <h3>Cold</h3>
+      <div class="item"><span>Maple Cold Brew<small>Our best seller</small></span><span class="dots"></span><span class="price">$5</span></div>
+      <div class="item"><span>Oat Milk Latte<small>Iced or hot</small></span><span class="dots"></span><span class="price">$5.50</span></div>
+      <div class="item"><span>Iced Mocha</span><span class="dots"></span><span class="price">$5.25</span></div>
+    </div>
+    <div>
+      <h3>Pair it with</h3>
+      <div class="item"><span>Butter Croissant<small>Baked fresh every morning</small></span><span class="dots"></span><span class="price">$3.75</span></div>
+      <div class="item"><span>Egg and Cheese Sandwich</span><span class="dots"></span><span class="price">$6.50</span></div>
+      <div class="item"><span>Blueberry Muffin</span><span class="dots"></span><span class="price">$3.50</span></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="visit" class="visit"><div class="wrap grid">
+  <div>
+    <h2>Visit</h2>
+    <p>123 Main Street, Portland, OR 97201.<br>Sample address only, this shop is fictional.</p>
+  </div>
+  <div>
+    <h3>Hours</h3>
+    <table class="hours">
+      <tr><td>Monday to Friday</td><td>6:00 AM – 8:00 PM</td></tr>
+      <tr><td>Saturday</td><td>7:00 AM – 9:00 PM</td></tr>
+      <tr><td>Sunday</td><td>7:00 AM – 6:00 PM</td></tr>
+    </table>
+  </div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+  <h2>Say hello</h2>
+  <p>Need coffee for your office or an event? Call or email us below.</p>
+  <p style="margin-top:12px"><strong>Phone:</strong> (555) 010-0000 (sample) &nbsp; <strong>Email:</strong> hello@example.com (sample)</p>
+</div></section>
+<footer><div class="wrap">Sample website for portfolio purposes. Built with AI assistance and reviewed before delivery.</div></footer>
+</body>
+</html>
